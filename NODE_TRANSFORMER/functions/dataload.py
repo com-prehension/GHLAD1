@@ -1,5 +1,5 @@
 import os
-from functions.构建树 import build_tree_from_txt,construct_tree_to_nx
+from functions.build_tree import build_tree_from_txt,construct_tree_to_nx
 import random
 import networkx as nx
 from functions.utils import read_file_one_hot_new,read_exception_one_hot_new,read_one_hot
@@ -468,7 +468,7 @@ def read_exist_substructure_to_datatxt_for_halo(dataname,dataset, train_ratio, v
     # 构建dataset目录的绝对路径
     datatxt_root = os.path.join(project_root, "data")
 
-    root = datatxt_root + f"/{dataname}/新"
+    root = datatxt_root + f"/{dataname}/specified"
 
     graph_structure_path = root + f"graph_structure_path_dict{specify_number}.txt"
 
@@ -878,8 +878,8 @@ def search_specify_data_from_dataname(dataname, specify_number):
 
 """用于forum数据集的读取"""
 def search_specify_data_from_dataname_for_forum_layerfeats(dataname, specify_number):
-    # root = f"/root/autodl-tmp/project/data/{dataname}_data/新划分/"
-    root = f"/root/autodl-tmp/project/data_2/{dataname}_data/新"
+    # root = f"/root/autodl-tmp/project/data/{dataname}_data/specified_split/"
+    root = f"/root/autodl-tmp/project/data_2/{dataname}_data/specified"
 
     # graph_structure_path = root + f"graph_structure_path_dict{specify_number}.txt"
 
@@ -955,18 +955,18 @@ def search_specify_data_from_dataname_for_forum(dataname, specify_number):
     # 构建dataset目录的绝对路径
     dataset_root = os.path.join(project_root, "data")
 
-    # root = f"/root/autodl-tmp/project/data/{dataname}_data/新"
-    # root = f"/root/autodl-tmp/project/data_2/{dataname}_data/新"
-    # root = f"/root/autodl-tmp/project/data_4/{dataname}_data/新"
+    # root = f"/root/autodl-tmp/project/data/{dataname}_data/specified"
+    # root = f"/root/autodl-tmp/project/data_2/{dataname}_data/specified"
+    # root = f"/root/autodl-tmp/project/data_4/{dataname}_data/specified"
 
-    root = dataset_root + f"/{dataname}/新"
+    root = dataset_root + f"/{dataname}/specified"
 
-    # root = f"/root/autodl-tmp/project/data/{dataname}_data/新划分/"
-    # root = f"/root/autodl-tmp/project/data/{dataname}_data/新"
+    # root = f"/root/autodl-tmp/project/data/{dataname}_data/specified_split/"
+    # root = f"/root/autodl-tmp/project/data/{dataname}_data/specified"
     # root = f"/root/autodl-tmp/project/data/{dataname}_data/"
-    # root = f"/root/autodl-tmp/project/data_2/{dataname}_data/新"
-    # root = f"/root/autodl-tmp/project/data_3/{dataname}_data/新"
-    # root = f"/root/autodl-tmp/project/data_4/{dataname}_data/新"
+    # root = f"/root/autodl-tmp/project/data_2/{dataname}_data/specified"
+    # root = f"/root/autodl-tmp/project/data_3/{dataname}_data/specified"
+    # root = f"/root/autodl-tmp/project/data_4/{dataname}_data/specified"
 
     # graph_structure_path = root + f"graph_structure_path_dict{specify_number}.txt"
 
@@ -1086,7 +1086,7 @@ def read_exist_substructure_to_datatxt_for_forum(dataname,dataset, train_ratio, 
     # 构建dataset目录的绝对路径
     datatxt_root = os.path.join(project_root, "data")
 
-    root = datatxt_root + f"/{dataname}/新"
+    root = datatxt_root + f"/{dataname}/specified"
 
     graph_structure_path = root + f"graph_structure_path_dict{specify_number}.txt"
 
@@ -1097,7 +1097,7 @@ def read_exist_substructure_to_datatxt_for_forum(dataname,dataset, train_ratio, 
     # directory = dataset
 
     directory = dataset
-    # root = f"/root/autodl-tmp/project/data_4/{dataname}_data/新/新"
+    # root = f"/root/autodl-tmp/project/data_4/{dataname}_data/specified/specified"
     #
     # graph_structure_path = root + f"graph_structure_path_dict{specify_number}.txt"
     #
@@ -1253,10 +1253,10 @@ def add_edge_attr_to_graph(G):
 
 
 def search_specify_data_from_dataname_for_Logs2(dataname, specify_number):
-    root = f"/root/autodl-tmp/project/data/{dataname}_data/新划分/"
-    # root = f"/root/autodl-tmp/project/data/{dataname}_data/新"
+    root = f"/root/autodl-tmp/project/data/{dataname}_data/specified_split/"
+    # root = f"/root/autodl-tmp/project/data/{dataname}_data/specified"
     # root = f"/root/autodl-tmp/project/data/{dataname}_data/"
-    # root = f"/root/autodl-tmp/project/data_2/{dataname}_data/新"
+    # root = f"/root/autodl-tmp/project/data_2/{dataname}_data/specified"
 
     # graph_structure_path = root + f"graph_structure_path_dict{specify_number}.txt"
 
@@ -1331,7 +1331,7 @@ def read_exist_substructure_to_datatxt_for_Logs2(dataname, train_ratio, val_rati
     test_paths = []
     test_one_paths = []
 
-    root = f"/root/autodl-tmp/project/data_2/{dataname}_data/新"
+    root = f"/root/autodl-tmp/project/data_2/{dataname}_data/specified"
 
     graph_structure_path = root + f"graph_structure_path_dict{specify_number}.txt"
 
@@ -1500,12 +1500,12 @@ def search_specify_data_from_dataname_for_halo(dataname, specify_number):
     # 构建dataset目录的绝对路径
     dataset_root = os.path.join(project_root, "data")
 
-    # root = f"/root/autodl-tmp/project/data/{dataname}_data/新"
-    # root = f"/root/autodl-tmp/project/data_2/{dataname}_data/新"
-    # root = f"/root/autodl-tmp/project/data_4/{dataname}_data/新"
+    # root = f"/root/autodl-tmp/project/data/{dataname}_data/specified"
+    # root = f"/root/autodl-tmp/project/data_2/{dataname}_data/specified"
+    # root = f"/root/autodl-tmp/project/data_4/{dataname}_data/specified"
 
 
-    root = dataset_root + f"/{dataname}_data/新"
+    root = dataset_root + f"/{dataname}_data/specified"
 
     # graph_structure_path = root + f"graph_structure_path_dict{specify_number}.txt"
 
@@ -1581,7 +1581,7 @@ def search_specify_data_from_dataname_for_halo(dataname, specify_number):
     return train_dataset, val_dataset, test_dataset, test_one_dataset
 
 def search_specify_data_from_dataname_for_halo_withlayerfeats(dataname, specify_number):
-    root = f"/root/autodl-tmp/project/data/{dataname}_data/新划分/"
+    root = f"/root/autodl-tmp/project/data/{dataname}_data/specified_split/"
 
     # graph_structure_path = root + f"graph_structure_path_dict{specify_number}.txt"
 

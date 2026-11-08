@@ -4,7 +4,7 @@ import torch
 import logging
 import numpy as np
 import random
-from networks.forum探索版时序Model8  import TransGRUNet_1_4,TransGRUNet_2_4
+from networks.forum_temporal_model8  import TransGRUNet_1_4,TransGRUNet_2_4
 import torch.nn as nn
 from tqdm import tqdm
 from functions.utils import read_one_hot,deal_Graph

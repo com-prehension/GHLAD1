@@ -40,8 +40,8 @@ def stated_train_run(args):
         else:
             train_tree_set, val_tree_set, test_data_list, test_one_list = search_specify_data_from_dataname_for_forum(
                 dataname, specify_number)
-        # root = f"/root/autodl-tmp/project/新result_8/{dataname}/指定数据集{specify_number}/"
-        root = data_root + f"/{dataname}/指定数据集{specify_number}/"
+        # root = f"/root/autodl-tmp/project/result_v8/{dataname}/specified_dataset{specify_number}/"
+        root = data_root + f"/{dataname}/specified_dataset{specify_number}/"
 
     else:
         '''使用结构划分数据集'''
@@ -51,8 +51,8 @@ def stated_train_run(args):
         else:
             train_tree_set, val_tree_set, test_data_list, test_one_list = read_exist_substructure_to_datatxt_for_forum(
                 dataname,dataset_root, train_ratio=0.8, val_ratio=0.1, record=1, specify_number=specify_number)
-        # root = f"/root/autodl-tmp/project/新result_8/{dataname}/划分数据集/"
-        root = data_root + f"/{dataname}/划分数据集/"
+        # root = f"/root/autodl-tmp/project/result_v8/{dataname}/split_dataset/"
+        root = data_root + f"/{dataname}/split_dataset/"
 
     storage_path = root + f"no.{storage_number}_result.txt"
     storage_loss_path = root + f"no.{storage_number}_loss.txt"
@@ -68,35 +68,35 @@ def stated_train_run(args):
 
 
 if __name__ == "__main__":
-    # 解析命令行参数
-    parser = argparse.ArgumentParser(description="模型训练启动程序")
+    # Parse command line arguments
+    parser = argparse.ArgumentParser(description="Model training launcher")
 
-    # 核心参数
+    # Core parameters
     parser.add_argument("--dataname", type=str, default="forum",
-                        help="数据集名称 (forum/novel/halo)")
+                        help="Dataset name (forum/novel/halo)")
     parser.add_argument("--specify_data", type=bool, default=False,
-                        help="是否使用指定数据集 (默认不使用)")
+                        help="Whether to use specified dataset (default: False)")
     parser.add_argument("--specify_number", type=str, default="2",
-                        help="指定数据集编号")
+                        help="Specified dataset number")
     parser.add_argument("--storage_number", type=str, default="Test001",
-                        help="结果文件编号")
+                        help="Result file number")
 
-    # 路径参数
+    # Path parameters
     parser.add_argument("--project_root", type=str, default="",
-                        help="项目根目录绝对路径 (默认自动计算)")
+                        help="Project root absolute path (auto-calculated by default)")
     parser.add_argument("--dataset_root", type=str, default="",
-                        help="数据集目录绝对路径 (默认使用项目内dataset目录)")
+                        help="Dataset directory absolute path (uses dataset/ in project by default)")
 
 
-    # 训练参数
+    # Training parameters
     parser.add_argument("--train_ratio", type=float, default=0.8,
-                        help="训练集比例")
+                        help="Training set ratio")
     parser.add_argument("--val_ratio", type=float, default=0.1,
-                        help="验证集比例")
+                        help="Validation set ratio")
     parser.add_argument("--record", type=int, default=1,
-                        help="是否记录数据集划分 (1=记录, 0=不记录)")
+                        help="Whether to record dataset split (1=yes, 0=no)")
     parser.add_argument("--seed", type=int, default=42,
-                        help="随机种子")
+                        help="Random seed")
 
     args = parser.parse_args()
 

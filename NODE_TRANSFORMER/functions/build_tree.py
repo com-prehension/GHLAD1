@@ -622,7 +622,7 @@ def construct_tree_to_nx_with_brother_connected(tree, event_map, file_name_map):
 
 
 """
-遍历文件夹，构建树
+Traverse folder and build tree
 """
 
 

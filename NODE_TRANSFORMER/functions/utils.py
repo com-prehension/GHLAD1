@@ -1,6 +1,6 @@
 import os
 import torch
-from functions.构建树 import  build_tree_from_txt,construct_tree_to_nx,\
+from functions.build_tree import  build_tree_from_txt,construct_tree_to_nx,\
      process_trees_to_construct_tree_chains,construct_tree_to_nx_with_filemap, \
     construct_tree_to_nx_with_filemap_and_high_subgraph\
     ,construct_layered_graph,construct_tree_to_nx_with_filemap_position,construct_tree_to_nx_with_filemap_layerfeatures, \
@@ -9,7 +9,7 @@ from functions.构建树 import  build_tree_from_txt,construct_tree_to_nx,\
 from torch_geometric.data import Data
 from torch_geometric.loader import DataLoader
 import torch_geometric
-from functions.构件图_链条 import deal_tree_to_chain
+from functions.graph_chain import deal_tree_to_chain
 
 from functions.precision_index import show_metrics_AUPRC_new
 import random
@@ -504,7 +504,7 @@ def event_map_to_nodes(primeval_map,trees):
             event_map.append(primeval_map[graph.nodes[node]['event']].tolist())
     return event_map
 
-# 按比例划分数据集
+# Split dataset by ratio
 def random_split_data(dataset, train_ratio):
     train_num = int(len(dataset) * train_ratio)
     train_set = dataset[0: train_num]

@@ -14,7 +14,7 @@ def stated_train_run():
     for specify_number in [18]:
         dataname = "novel"
         specify_data = True
-        storage_number = "新动态中心-801"
+        storage_number = "specified_dynamic_center-801"
 
         start_time = datetime.now()
         print("First Model training started at:", start_time)
@@ -28,17 +28,17 @@ def stated_train_run():
                 train_tree_set, val_tree_set, test_data_list, test_one_list = search_specify_data_from_dataname_for_forum(
                     dataname, specify_number)
 
-            root = f"/root/autodl-tmp/project/新result_8/{dataname}/指定数据集{specify_number}/"
+            root = f"/root/autodl-tmp/project/result_v8/{dataname}/specified_dataset{specify_number}/"
 
         else:
-            '''使用结构划分数据集'''
+            '''Split dataset using structure'''
             if dataname == "halo":
                 train_tree_set, val_tree_set, test_data_list, test_one_list = read_exist_substructure_to_datatxt_for_halo(
                     dataname, train_ratio=0.8, val_ratio=0.1, record=1, specify_number=specify_number)
             else:
                 train_tree_set, val_tree_set, test_data_list, test_one_list = read_exist_substructure_to_datatxt_for_forum(
                     dataname, train_ratio=0.8, val_ratio=0.1, record=1, specify_number=specify_number)
-            root = f"/root/autodl-tmp/project/新result_5/novel/划分数据集/"
+            root = f"/root/autodl-tmp/project/result_v5/novel/split_dataset/"
 
         storage_path = root + f"no.{storage_number}_result.txt"
         storage_loss_path = root + f"no.{storage_number}_loss.txt"

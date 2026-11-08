@@ -119,7 +119,7 @@ def draw_tree(tree):
     plt.show()
 
 
-'''遍历文件夹，构建树'''
+'''Traverse folder and build tree'''
 
 
 def process_files(directorys):

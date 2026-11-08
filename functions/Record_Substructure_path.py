@@ -1,6 +1,6 @@
 
 import random
-from NODE_TRANSFORMER.functions.构建树 import *
+from NODE_TRANSFORMER.functions.build_tree import *
 
 def open_file(directory,result):
 
